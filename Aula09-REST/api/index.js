@@ -16,7 +16,7 @@ const conn = knex( {
         host : HOSTNAME ,
         user : "root" ,
         password : "" ,
-        database : "loja_25_2"
+        database : "loja_26_1"
     }
 } )
 
@@ -42,7 +42,6 @@ app.get( "/product/last"  , (req, res, next)=>{
         .catch( next )
 }  )
 
-
 app.get( "/product/:idProd"  , (req, res, next)=>{
     const id = req.params.idProd
     conn( "produto" )
@@ -53,7 +52,6 @@ app.get( "/product/:idProd"  , (req, res, next)=>{
         .then( dados => res.json( dados ) )
         .catch( next )
 }  )
-
 
 app.post( "/product"  , (req, res, next)=>{
     conn( "produto" )
@@ -70,7 +68,6 @@ app.post( "/product"  , (req, res, next)=>{
         .catch( next )
 }  )
 
-
 app.put( "/product/:idProd"  , (req, res, next)=>{
     const idProd = req.params.idProd
     conn( "produto" )
@@ -86,7 +83,6 @@ app.put( "/product/:idProd"  , (req, res, next)=>{
         })
         .catch( next )
 }  )
-
 
 app.delete( "/product/:idProd"  , (req, res, next)=>{
     const id = req.params.idProd
@@ -160,7 +156,6 @@ app.put( "/category/:idCat"  , (req, res, next)=>{
         })
         .catch( next )
 }  )
-
 
 app.delete( "/category/:idCat"  , (req, res, next)=>{
     const id = req.params.idCat
